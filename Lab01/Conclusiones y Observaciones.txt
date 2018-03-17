@@ -1,0 +1,8 @@
+Conclusiones:
+
+1.Se lograron realizar la instalación de NodeJS siguiendo las indicaciones del laboratorio.
+2.Se lograron realizar operaciones Aritmeticas, y cadenas de Texto por consola.
+3.Comenzamos a utilizar GitHub para poder subir nuestros archivos que realizamos, tanto el Laboratorio como la Tarea que se deja.
+4.Se logró levantar un servidor y mostrar la pagina indicada en ese caso fue el index.html
+5.Se logró realizar la tarea satisfactoriamente ejecutando javascript en el servidor y redireccionando cada una de las paginas.
+6.Aprendimos que para levantar un servidor se tiene que acceder a la ruta donde se encuentra el archivo mediante consola colocar node y el nombre de tal archivo.
