@@ -1,0 +1,51 @@
+Lab 02 - DAWA - C15 A
+Alumno: LEÓN BEDOYA Gabtim David
+
+Ejercicio 2.3
+La variable arreglo_parametros no se encuentra declarada por lo cual no podemos levantar el servidor, la solución es declararla donde se encuentra el array de valores. 
+Ver Captura_1.png
+
+Ejercicio 2.4
+Ver Captura_2.png
+
+Ejercicio 2.5
+Se utilizo console.log() para mostrar los valores en la consola.
+Ver Captura_3.png
+
+Ejercicio 2.6
+Se obtiene los valores enviados mediante la URL para luego poder utilizarlos para lo que necesitemos.
+
+Ejercicio 3.3
+Obtenemos los parametros mediante la URL.
+
+Ejercicio 3.4
+El codigo ya esta optimizado pero se puede mostrar los valores mediante el console.log()
+Ver Captura_4.png
+
+Ejercicio 4.1
+Ver Captura_fecha.png
+
+Ejercicio 4.3 
+Ver Captura_rutas.png
+Ver Captura_rutas2.png
+
+Ejercicio 5.3
+Ver Captura_REPL.png
+
+Ejercicio 5.4
+Ver Captura_mes1.png
+Ver Captura_mes2.png
+
+Ejercicio 5.9
+Ver Captura_navidad.png
+
+Tarea:
+1.Se encuentra en la carpeta Tara2
+2.node-inspector instalado
+Ver Captura_instalar.PNG
+3.Node inspector es un debugger para Node.js con la peculiaridad de que permite realizar las tareas de debug en remoto.
+Conclusiones:
+- Se logró resolver con exito cada uno de los ejercicios planteados.
+- Para ver lo que sucede y que es lo que recibe una petición utilizamos el console.log()
+-Las variables que se envian las podemos recoger como un parametro o tambien despues las podemos separar.
+-El .split es como una separación al obtener los parametros de la isla.

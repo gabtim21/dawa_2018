@@ -1,9 +1,10 @@
 var http = require('http'),
 	fs = require('fs')
-	fecha = require('./fecha.js')
+	time = require('./fecha.js')
 	parser = require('./parser_var.js'),
 	p = parser.parse_vars;
 	datos = parser.batman;
+	fec = time.fecha;
 	
 
 http.createServer(function(req,res){
@@ -24,6 +25,7 @@ http.createServer(function(req,res){
 		res.writeHead(200,{'Content-type':'text'});
 		res.write(html_string);
 		console.log(parametros,valores);
+		console.log(fec);
 		res.end();
 	});
 }).listen(8080);
