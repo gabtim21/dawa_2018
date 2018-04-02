@@ -1,0 +1,48 @@
+Lab 04 - DAWA - C15 A
+Alumno: LEÓN BEDOYA Gabtim David
+
+------------------------------------------
+
+Ejercicio 2.4
+-Ver imagen Captura1.png
+
+Ejercicio 2.5
+-Ver imagen Captura2_instalacion.png
+
+Ejercicio 2.7
+-Ver imagen Captura3_miapp.png
+
+Ejercicio 2.13
+-Terminar el ciclo de solicitud y respuestas.
+
+Ejericio 2.18
+-Ver imagenes
+	-Captura4_postman.png
+	-Captura4-1.png
+	-Captura4-2.png
+	-Captura4-3.png
+
+Ejercicio 2.19
+-Ver imagen Captura5_estructura.png
+
+Ejercicio 2.21
+-Ver imagen Captura6_verificicacion.png
+
+Ejercicio 2.24
+-Ver imagen Captura7_enmascaramiento
+
+Ejercicio 2.25
+-Ver imagen Captura8_error.png
+
+Ejercicio 2.26
+-Ver imagen Captura9_error500.png
+
+---------------------------------------------
+
+CONCLUSIONES:
+- Se logró crear nuestro primer "Hola Express" instalando express junto a sus librerias.
+- Se aplico lo aprendido del laboratorio pasado de como crear nuestra carpeta y tener los diferentes modulos con "mkdir" y "npm init".
+- Se comprendio el uso de middlewares para al momento de que utilizamos la misma URL pero diferente metodo como "POST", "PUT", "DELETE", "GET" entre otros.
+- Se probo el funcionamiento utilizando una extensión de Google que es el Postman y se obtuvo lo solicitado en cada ejercicio.
+- Se logró obtener los diferentes errores en este caso el 404 y 500, en donde el 404 son para paginas no encontradas o que no existen y el 500 es error del servidor.
+
