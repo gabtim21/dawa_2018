@@ -1,8 +1,9 @@
 var express = require('express')
 var app = express()
+var path = require('path')
 
 app.get('/', function (req, res){
-	res.send('Hola mundo! en Express :D')
+	res.sendFile('/',{root: path.join(__dirname,'landingPage')})
 })
 
 app.post('/', function (req, res){
@@ -19,6 +20,7 @@ app.delete('/user',function (req, res){
 
 app.use(express.static('public'))
 app.use(express.static('files'))
+app.use(express.static('landingPage'))
 app.use('/static', express.static('public'))
 
 app.use(function (req, res, next){
