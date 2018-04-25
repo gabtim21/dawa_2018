@@ -1,7 +1,7 @@
 html 
 	head
 		meta(name='viewport', content='width=device-width, initial-sacle=1')
-		title Sistema
+		title Dharmi
 		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
 		body
 			block content
@@ -11,17 +11,17 @@ html
 							tr
 								th ID
 								th Nombre
-								th Descripcion
-								th Precio
+								th Password
+								th Email
 						tbody
 							for item in data
 								tr
 									td= item._id
 									td= item.nombre
-									td= item.descripcion
-									td= item.precio
+									td= item.password
+									td= item.email
 									td
-										a(href="/producto/update/#{item._id}").btn.btn-large.btn-success Editar
+										a(href="/usuario/update/#{item._id}").btn.btn-large.btn-success Editar
 									td
-										a(href="/producto/delete/#{item._id}").btn.btn-large.btn-danger Eliminar
-					a(href='/crear_producto') Crear Producto
+										a(href="/usuario/delete/#{item._id}").btn.btn-large.btn-danger Eliminar
+					a(href='/crear_usuario') Crear Nuevo Usuario

@@ -1,0 +1,11 @@
+Lab 05 - DAWA - C15 A
+Alumno: LEÓN BEDOYA Gabtim David
+
+---------------------------------------------
+
+CONCLUSIONES:
+- Se logró realizar el Laboratorio satisfactoriamente.
+- Aprendimos a utilizar "jade" para la creación de las vistas.
+- Se realizo el CRUD , create , delete, update y read de un modelo.
+- Se logró implementar lo realizado en el Laboratorio para nuestro CRUD de proyecto.
+- Se logró realizar la conexión con la base de datos NOSql y poder obtener los datos e insertar datos mediante el uso de express.

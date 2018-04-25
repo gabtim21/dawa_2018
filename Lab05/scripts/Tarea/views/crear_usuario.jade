@@ -8,15 +8,15 @@ html
 				.main.container
 					.row
 						.col-md-6.col-md-offset-3
-							h1.display4.m-b-2 Crear Producto
+							h1.display4.m-b-2 Crear Usuario
 							form(method='POST' action='/create')
 								div.form-group
 									label(for='nombre') Nombre:
 									input#nombre.form-control(type='text' name='nombre')
 								div.form-group
-									label(for='descripcion') Descripcion:
-									input#descripcion.form-control(type='text' name='descripcion')
+									label(for='password') Password:
+									input#password.form-control(type='text' name='password')
 								div.form-group
-									label(for='precio') Precio:
-									input#precio.form-control(type='text' name='precio')
+									label(for='email') Email:
+									input#email.form-control(type='text' name='email')
 								button.btn.btn-primary(type='submit') Grabar

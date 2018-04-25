@@ -5,6 +5,9 @@ producto = require('./models/prod'),
 usuario = require('./models/user')
 
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ 
+  extended: false
+})); 
 
 app.set('view engine','jade')
 
@@ -24,11 +27,10 @@ app.get('/crear_producto', function(req, res){
 	res.render('crear_producto')
 })
 
-
 app.get('/producto',producto.show)
-app.post('/producto',producto.create)
+app.post('/create',producto.create)
 app.post('/producto/update',producto.update)
-app.post('/producto/delete', producto.delete)
+app.post('/producto/delete/:id', producto.delete)
 
 
 app.listen(9090,function(){

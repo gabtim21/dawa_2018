@@ -23,28 +23,28 @@ module.exports = {
 	},
 	create: function(req,res){
 		var item = {
-			nombre: req.query.nombre,
-			descripcion: req.query.descripcion,
-			precio: req.query.precio
+			nombre: req.body.nombre,
+			descripcion: req.body.descripcion,
+			precio: req.body.precio
 		}
 		var nuevo = new pro_model(item).save()
-		res.send(nuevo)
+		res.redirect('/producto')
 		console.log('Se creo correctamente')
 	},
 	update: function(req, res){
-		pro_model.findOne({_id: req.query._id},function(err,producto){
-			producto.nombre = req.query.nombre
-			producto.descripcion = req.query.descripcion
-			producto.precio = req.query.precio
+		pro_model.findbyId({_id: req.body._id},function(err,producto){
+			producto.nombre = req.body.nombre
+			producto.descripcion = req.body.descripcion
+			producto.precio = req.body.precio
 			producto.save()
 			res.send(producto)
 			console.log('Se actualizo correctamente')
 		})
 	},
 	delete: function(req, res){
-		pro_model.findOne({_id: req.query._id},function(err,producto){
+		pro_model.findbyId({_id: req.params._id},function(err,producto){
 			producto.remove()
-			res.send({status:true})
+			res.redirect('/producto')
 			console.log('Se elimino correctamente')
 		})
 	},
