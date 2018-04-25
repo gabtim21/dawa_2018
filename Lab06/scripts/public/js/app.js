@@ -9,6 +9,10 @@ $(document).ready(function(){
 	socket.on('nuevo',function(data){
 		fill(data);
 	});
+	socket.on('borrado',function(data){
+		$('#'+data).remove();
+	})
+	
 
 	var fill = function(data){
 		if($('#'+data._id).length==0){
@@ -34,14 +38,20 @@ $(document).ready(function(){
 			$(this).closest('tr').addClass('warning');
 
 		});
+		$row.find('[name=btnEli]').click(function(){
+			var _id = $(this).closest('tr').attr('id');
+			if (confirm('Continuar con la eliminación de registro?')){
+				socket.emit('eliminar',_id);
+			}
+		});
 		$('table tbody').append($row);
 	}else{
 		var $row = $('#'+data._id);
-		$row.find('td.eq(1)').html(data.first_name);
-		$row.find('td.eq(2)').html(data.last_name);
-		$row.find('td.eq(3)').html(data.timezone);
-		$row.find('td.eq(4)').html(data.locale);
-		$row.find('td.eq(5)').html(data.profile_pic);
+		$row.find('td:eq(1)').html(data.first_name);
+		$row.find('td:eq(2)').html(data.last_name);
+		$row.find('td:eq(3)').html(data.timezone);
+		$row.find('td:eq(4)').html(data.locale);
+		$row.find('td:eq(5)').html(data.profile_pic);
 	}
 	};
 
@@ -63,7 +73,10 @@ $(document).ready(function(){
 			$('#first_name').focus();
 			return alert('Debe ingresar su nombre');
 		}
-		socket.emit('crear',data);
+		var accion = 'crear';
+		if($('.warning').length>0)accion = 'actualizar';
+		$('.warning').removeClass('warning');
+		socket.emit(accion,data);
 		$('#formulario').trigger('reset');
 		return true;
 	});

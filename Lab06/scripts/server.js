@@ -23,11 +23,17 @@ io.on('connection', function(socket){
 		user.create(data,function(rpta){
 			io.emit('nuevo',rpta)
 		});
-		console.log(data);
+		
 	});
 	socket.on('actualizar',function(data){
 		user.update(data,function(rpta){
 			io.emit('nuevo',rpta);
+		})
+		console.log(data);
+	})
+	socket.on('eliminar',function(data){
+		user.delete(data,function(rpta){
+			io.emit('borrado',rpta);
 		})
 	})
 	socket.on('disconnect', function(){
