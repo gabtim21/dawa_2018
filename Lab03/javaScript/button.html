@@ -2,25 +2,24 @@
 <html>
 <head>
 	<title>Button</title>
-<script type="text/javascript">
-	function prueba(){
-	alerta = alert("Hello")
-	console.log(alerta);
-}
-</script>
-<script type="text/javascript">
 
-var nodes = document.getElementsByTagName("button");
-for (var i = 0; i<nodes.length; i++){
-	nodes[i].addEventListener('click',function(){
-		console.log('You clicked element #' + i);
-	});
-}
+<script type="text/javascript">
+function addClickListener(elemento, id){
+			elemento.addEventListener('click',function(){
+				alert('You clicked element #' + id);
+				document.getElementById("clicks").innerHTML = 
+				'You clicked element #' + id;
+			});
+		}
+		
+		var nodes = document.getElementsByTagName('button');
+			for(var i = 0; i < nodes.length; i++){
+				addClickListener(nodes[i],nodes[i].getAttribute('ID'));
+			}
 </script>
 </head>
 <body>
-	<button id="button" >Dale Like</button>
+	<button id="1" >Dale Like</button>
+	<button id="2" >Dale Like x2</button>
 </body>
 </html>
-
-<!--Quicksort animation-->

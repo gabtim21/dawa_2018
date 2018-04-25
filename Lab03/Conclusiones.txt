@@ -1,0 +1,37 @@
+Lab 02 - DAWA - C15 A
+Alumno: LEÓN BEDOYA Gabtim David
+
+------------------------------------------
+
+7.1 Lo que se observa es que al hacer click sobre algun button se imprira "hiciste click en el button junto a su numero o Id" del elemento.
+
+7.3 En esta función se ve que se debe imprimir en la consola los numeros 1,2,3 y 4, pero no se imprimira en orden ya que despues que se imprima el numero 1, se tendra que esperar un tiempo de 1000 milisegundos, para lo cual la funcion seguira y luego se imprimira el numero 4 ya que no tiene ningun tiempo, como la funcion sigue el 3 se imprimira antes ya que su tiempo es de 0 y al final sera el numero 2, por lo que el orden de impresión en la consola seria 1,4,3 y 2. Ver imagen 7.3.PNG
+
+7.5 Cuando recibimos parametros de otra función y tambien es util para no crear campos vacios.
+
+7.8 Ver archivo ejercicio7.8.js
+
+7.9 Ver archivo ejercicio7.9.js
+
+7.10 Ver archivo ejercicio7.10.js
+
+8.2 Ver archivo ejercicio8.2.js y la imagen 8.2.PNG
+
+8.3 Ver archivo ejercicio8.3.js y la imagen 8.3.PNG
+
+8.4 Ver archivo ejercicio8.4.js y la imagen 8.4.PNG
+
+8.6 Ver archivo ejercicio8.6.js y la imagen 8.6.PNG
+
+
+---------------------------------------------
+
+CONCLUSIONES:
+
+- En el desarrollo del Laboratorio aprendimos a usa mas las funciones de javascript y aplicarlo en diferentes ejercicios.
+- Se logró crear una carpeta de nombre proyecto en el cual instalamos diferentes dependencias, para poder utilizarlas en el desarrollo del Laboratorio.
+- Aprendimos a utilizar la función de underscore y a usarlo en los ejemplos planteados en el Lab.
+- Se logró desarrollar el Laboratorio satisfactoriamente entendiendo mas de Javascript y completando los ejercicios propuestos por el Profesor, desarrollando nuestra logica antes de poder ejecutar el codigo, osea entender el funcionamiento.
+- Filter nos permite nos permiter encontrar coincidencias.
+
+
