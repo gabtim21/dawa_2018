@@ -1,19 +1,50 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Route, NavLink, Switch} from 'react-router-dom';
+
+import classes from './App.css';
+
+import Posts from './containers/Posts/Posts';
+import NewPost from './components/NewPost/NewPost';
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+    return (<BrowserRouter>
+      <div className={classes.App}>
+        <header>
+          <nav>
+            <ul>
+              <li><NavLink
+                  to="/"
+                  exact
+                  activeStyle={{
+                      color: '#fa923f',
+                      textDecoration: 'underline'
+                  }}>Inicio</NavLink></li>
+              <li><NavLink
+                  to="/posts"
+                  exact
+                  activeStyle={{
+                      color: '#fa923f',
+                      textDecoration: 'underline'
+                  }}>Posts</NavLink></li>
+              <li><NavLink
+                  to={{
+                      pathname: '/new-post',
+                      hash: '#submit',
+                      search: '?quick-submit=true'
+                  }}>NewPost</NavLink></li>
+            </ul>
+          </nav>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <h1>Blog de ejemplo</h1>
+      <Switch>
+        <Route path="/new-post" component={NewPost} />
+        <Route path="/posts" component={Posts} />
+        <Route path="/" exact render={() => <h1>Pagina de Inicio</h1>} />
+        <Route render={() => <h1>Not found</h1>}/>
+      </Switch>
+    </div>
+  </BrowserRouter>
     );
   }
 }
