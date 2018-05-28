@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title>App Electron</title>
+</head>
+<body>
+	<h1>Hola mundo !!! (Gabtim)</h1>
+	<p id="content"></p>
+	<button id="new-window">Crear nueva ventana</button><br/>
+	<script>
+		//importamos `fs` y `path`
+		const {BrowserWindow} = require('electron').remote
+		const { readFile } = require('fs');
+		const path = require('path');
+		const { resolve } = require('path');
+		//leemos el archivo package.json como utf-8
+		//readFile(resolve('./package.json'),'utf-8', (error, data) => {)
+		readFile(resolve(`${__dirname}/package.json`), 'utf8', (error, data) => {
+			if (error){
+				//si haybun error lo mostramos en consola
+				console.error(error);
+				return error
+			}
+			//si no escribimos el contenido del package.json en el html
+			return document.getElementById('content').innerHTML = data;
+		});
+
+		const newWindowBtn = document.getElementById('new-window')
+
+		newWindowBtn.addEventListener('click', (event) => {
+			const modalPath = path.join('file://',__dirname, 'modal.html');
+			let win = new BrowserWindow({width: 400, height:320})
+			win.on('close', () => {win = null})
+			win.loadURL(modalPath)
+			win.show()
+		});
+
+	</script>
+</body>
+</html>

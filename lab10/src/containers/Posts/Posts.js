@@ -22,7 +22,7 @@ export default class Posts extends Component{
 						userId={item.userId} />);
 			});
 		}
-		return (<div className={classes.Post}>)
+		return (<div className={classes.Post}>
 			{listado}
 		</div>);
 	}
