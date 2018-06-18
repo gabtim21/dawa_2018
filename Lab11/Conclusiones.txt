@@ -1,0 +1,9 @@
+Lab 11 - DAWA - C15 A
+Alumno: LEÓN BEDOYA Gabtim David
+
+------------------------------------------
+
+-Se desarrollo el Laboratorio siguiendo cada uno de los pasos indicados, tanto como el descargar el archivo el cual contenia el Lab11 a desarrollar y lo unico que se hacia para que pueda correr correctamente era el npm install, instalar las dependencias y luego darle npm start para que se inicie.
+-Aprendimos estilos de cargar como el spinner ya que al momento de darle clic a un post para que nos muestre se puede notar la carga de tal por con ese estilo dado.
+-Se aprendio a colocar una imagen en la pagina de inicio siguiendo las buenas practicas de la programación se creo una carpeta assets la cual contendra las imagenes a utilizar.
+-Se ejecuto el npm run build y lo que hace es darnos una versión mas optimizada de todo nuestro proyecto y a la vez poder hacerlo correr simulando un servidor real.
