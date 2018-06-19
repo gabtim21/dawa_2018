@@ -1,20 +1,19 @@
-const User = require('../models/user.js');
-
 const utils = require('../lib/utils');
 
-const exponsedFields = [
+const User = require('../models/user.js');
+
+const exposedFields = [
 	'username',
 	'name',
 	'email'
 ];
 
 module.exports = {
-
-	signup: (req, res, next)=>{
+	signup: (req,res,next) => {
 		var user = new User({
 			...req.body
 		});
-		user 
+		user
 			.save()
 			.then(result => {
 				const token = utils.generateToken({
@@ -27,7 +26,7 @@ module.exports = {
 				res.status(200).json({
 					message: 'User succesfully signup!',
 					data: exposedData,
-					token: token
+					token: token 
 				});
 			})
 			.catch(err => {
@@ -40,8 +39,8 @@ module.exports = {
 	signin: (req,res,next) => {
 		User
 			.findOne({username: req.body.username})
-			.select(exponsedFields.join(' ')+' password')
-			.exec((err,user)=>{
+			.select(exposedFields.join(' ')+' password')
+			.exec((err,user) => {
 				if(err) res.status(500).json(err);
 				if(!user){
 					return res.status(401).json({
@@ -63,25 +62,24 @@ module.exports = {
 							token: utils.generateToken(user)
 						});
 					})
-				
 					.catch(err => {
 						res.status(500).json(err);
 					});
 			});
 	},
-
-	refreshToken: (req,res,next)=>{
+	refreshToken: (req,res,next) => {
 		
 		var token = req.body.token || req.query.token;
-		if(!token) {
-			return res.status(401).json({message: 'Must pass token'});
+		if (!token) {
+			return res.status(401).json({ message: 'Must pass token'});
 		}
 
 		utils.verifyToken(token)
 			.then(user => {
+
 				User.findById({
-					'_id' : user_id
-				}, function(err, user){
+					'_id': user._id
+				}, function(err, user) {
 					if (err) throw err;
 
 					const exposedData = utils.getCleanUser(user['_doc']);
@@ -96,57 +94,34 @@ module.exports = {
 			.catch(err => {
 				res.status(500).json(err);
 			});
-
 	},
-	verifyToken: (req,res,next)=>{
+	verifyToken: (req,res,next) => {
 		const token = req.headers['authorization'];
 		if (!token) res.status(401).json({
 			error: true,
-			message: 'Please registrer Log in using a valid email to submit posts'
+			message: 'Please register Log in using a valid email to submit posts'
 		});
-
 		utils.verifyToken(token)
 			.then(function(user){
+
 				req.user = user;
 				next();
 			})
 			.catch(function(err){
-				console.log(err);
+				console.log(err)
 				res.status(500).json({
-					error:err
+					error: err
 				});
 			});
 	},
-
-	create: (req, res, next)=>{
-		var user = new User({
-			...req.body
-		});
-		user 
-			.save()
-			.then(result => {
-				res.status(200).json({
-					message: 'User succesfully created!',
-					data: {
-						...result['_doc']
-					}
-				});
-			})
-			.catch(err => {
-				console.log(err);
-				res.status(500).json({
-					error:err
-				});
-			});
-	},
-	find: (req,res,next) => {
+	find: (req,res,next)=>{
 		User.find()
-			.select(exponsedFields.join(' '))
+			.select(exposedFields.join(' '))
 			.exec()
 			.then(docs => {
 				const response = {
 					count: docs.length,
-					data : docs.map(doc => {
+					data: docs.map(doc => {
 						return {
 							...doc['_doc']
 						};
@@ -154,10 +129,10 @@ module.exports = {
 				};
 				res.status(200).json(response);
 			})
-			.catch(err => {
+			.catch(err =>{
 				console.log(err);
 				res.status(500).json({
-					error:err
+					error: err
 				});
 			});
 	},
@@ -170,50 +145,14 @@ module.exports = {
 					res.status(200).json({
 						data: doc['_doc'],
 					});
-				}else{
+				} else {
 					res.status(404).json({message: 'No valid entry found for provided ID'});
 				}
 			})
-			.catch(err=>{
+			.catch(err =>{
 				console.log(err);
 				res.status(500).json({
-					error:err
-				});
-			});
-	},
-	update: (req,res,next)=>{
-		const id = req.params.id;
-		let updateParams = {
-			...req.body
-		};
-		User.update({_id:id},{$set: updateParams})
-			.exec()
-			.then(result => {
-				res.status(200).json({
-					message: 'User updated!',
-					data: result['_doc']
-				});
-			})
-			.catch(err=>{
-				console.log(err);
-				res.status(500).json({
-					error:err
-				});
-			});
-	},
-	delete: (req,res,next)=>{
-		const id = req.params.id;
-		User.remove({_id:id})
-			.exec()
-			.then(result=>{
-				res.status(200).json({
-					message: 'User deleted!'
-				});
-			})
-			.catch(err=>{
-				console.log(err);
-				res.status(500).json({
-					error:err
+					error: err
 				});
 			});
 	}
