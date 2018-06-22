@@ -1,0 +1,9 @@
+Lab 07 - DAWA - C15 A
+Alumno: LEÓN BEDOYA Gabtim David
+
+------------------------------------------
+
+-En este desarrollo de Laboratorio se utilizo react, aprendimos a realizar la instalación y a iniciarlos.
+-Se reconocio el entorno de como es que trabaja ReactJS.
+- Aprendimos que reactJS trabaja por componentes, y que es una biblioteca escrita en JavaScript.
+- Se vio que reactJS trabaja con componente reutilizables e interactivos en las interfaces.
